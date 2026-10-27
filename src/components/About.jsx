@@ -142,39 +142,6 @@ const About = () => {
         </div>
       </section>
 
-      <section className='bg-white px-4 py-20 sm:px-12 lg:px-24 xl:px-40 dark:bg-gray-950'>
-        <div className='mx-auto grid max-w-6xl gap-14 lg:grid-cols-[0.9fr_1fr] lg:items-start'>
-          <Motion.div {...fadeUp}>
-            <p className={eyebrowClass}>Our Story</p>
-            <h2 className='mt-7 text-4xl font-extrabold uppercase leading-tight tracking-normal sm:text-5xl lg:text-6xl'>
-              From clear beginnings to trusted technology partners.
-            </h2>
-          </Motion.div>
-
-          <Motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
-            <div className='overflow-hidden rounded-[16px] bg-gray-100 dark:bg-gray-900'>
-              <img
-                src={assets.work_fitness_app}
-                alt='Amazonis digital product work'
-                className='h-72 w-full object-cover sm:h-96'
-              />
-            </div>
-            <div className='mt-8 space-y-5 text-base leading-8 text-gray-600 dark:text-gray-400'>
-              <p>
-                Amazonis was created with a straightforward idea: businesses should be able to access
-                dependable technology without unnecessary complexity, unclear pricing or disconnected
-                service providers.
-              </p>
-              <p>
-                Many businesses have strong ideas but struggle to find the right technical support to
-                execute them properly. We bridge that gap by combining development, design,
-                infrastructure and digital execution within one professional team.
-              </p>
-            </div>
-          </Motion.div>
-        </div>
-      </section>
-
       <section className='bg-white px-4 pb-20 sm:px-12 lg:px-24 xl:px-40 dark:bg-gray-950'>
         <div className='mx-auto max-w-6xl'>
           <Motion.div {...fadeUp} className='max-w-3xl'>
@@ -206,6 +173,39 @@ const About = () => {
               </Motion.a>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className='bg-white px-4 py-20 sm:px-12 lg:px-24 xl:px-40 dark:bg-gray-950'>
+        <div className='mx-auto grid max-w-6xl gap-14 lg:grid-cols-[0.9fr_1fr] lg:items-start'>
+          <Motion.div {...fadeUp}>
+            <p className={eyebrowClass}>Our Story</p>
+            <h2 className='mt-7 text-4xl font-extrabold uppercase leading-tight tracking-normal sm:text-5xl lg:text-6xl'>
+              From clear beginnings to trusted technology partners.
+            </h2>
+          </Motion.div>
+
+          <Motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
+            <div className='overflow-hidden rounded-[16px] bg-gray-100 dark:bg-gray-900'>
+              <img
+                src={assets.work_fitness_app}
+                alt='Amazonis digital product work'
+                className='h-72 w-full object-cover sm:h-96'
+              />
+            </div>
+            <div className='mt-8 space-y-5 text-base leading-8 text-gray-600 dark:text-gray-400'>
+              <p>
+                Amazonis was created with a straightforward idea: businesses should be able to access
+                dependable technology without unnecessary complexity, unclear pricing or disconnected
+                service providers.
+              </p>
+              <p>
+                Many businesses have strong ideas but struggle to find the right technical support to
+                execute them properly. We bridge that gap by combining development, design,
+                infrastructure and digital execution within one professional team.
+              </p>
+            </div>
+          </Motion.div>
         </div>
       </section>
 
@@ -276,42 +276,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className='bg-[#f4f4f2] px-4 py-20 sm:px-12 lg:px-24 xl:px-40 dark:bg-black'>
-        <div className='mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1fr_1fr_0.42fr]'>
-          <Motion.div
-            {...fadeUp}
-            className='overflow-hidden rounded-[16px] bg-white dark:bg-gray-950'
-          >
-            <img src={assets.bgImage2} alt='Amazonis workspace' className='h-80 w-full object-cover' />
-          </Motion.div>
-
-          <Motion.div
-            {...fadeUp}
-            transition={{ ...fadeUp.transition, delay: 0.1 }}
-            className='overflow-hidden rounded-[16px] bg-white dark:bg-gray-950'
-          >
-            <img
-              src={assets.work_mobile_app}
-              alt='Amazonis mobile solution'
-              className='h-80 w-full object-cover'
-            />
-          </Motion.div>
-
-          <Motion.div
-            {...fadeUp}
-            transition={{ ...fadeUp.transition, delay: 0.2 }}
-            className='relative min-h-80 overflow-hidden rounded-[16px] bg-primary'
-          >
-            <img src={assets.hero_img} alt='' className='absolute inset-0 h-full w-full object-cover opacity-35' />
-            <div className='absolute inset-0 bg-primary/60' />
-            <div className='relative flex h-full items-end p-7 [writing-mode:vertical-rl]'>
-              <p className='rotate-180 text-5xl font-extrabold text-white'>Amazonis</p>
-            </div>
-          </Motion.div>
-        </div>
-      </section>
-
-      <section className='bg-white px-4 pb-20 sm:px-12 lg:px-24 xl:px-40 dark:bg-gray-950'>
+      <section className='bg-white px-4 py-20 sm:px-12 lg:px-24 xl:px-40 dark:bg-gray-950'>
         <div className='mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr]'>
           <Motion.div {...fadeUp}>
             <p className={eyebrowClass}>What We Value</p>
