@@ -68,7 +68,7 @@ const ServiceShowcaseCard = ({ service, index, onOpen }) => {
       {...fadeUp}
       data-cursor-light={isBlue || undefined}
       transition={{ ...fadeUp.transition, delay: index * 0.035 }}
-      className={`group relative isolate flex min-h-[360px] overflow-hidden rounded-[18px] p-6 ring-1 transition duration-500 hover:z-10 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(0,64,193,0.14)] ${
+      className={`group relative isolate flex min-h-[420px] overflow-hidden rounded-[18px] p-6 ring-1 transition duration-500 sm:p-7 hover:z-10 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(0,64,193,0.14)] ${
         isBlue
           ? 'bg-primary text-white ring-primary/20'
           : 'bg-white text-gray-950 ring-gray-200 dark:bg-gray-950 dark:text-white dark:ring-gray-800'
@@ -107,19 +107,19 @@ const ServiceShowcaseCard = ({ service, index, onOpen }) => {
           />
         </div>
 
-        <div className='pt-8 transition duration-500 group-hover:-translate-y-1 group-focus-within:-translate-y-1'>
-          <h3 className='max-w-xl text-[1.6rem] font-extrabold uppercase leading-[1.02] tracking-normal sm:text-[1.85rem]'>
+        <div className='pt-9 transition duration-500 group-hover:-translate-y-1 group-focus-within:-translate-y-1'>
+          <h3 className='max-w-xl text-[1.55rem] font-extrabold uppercase leading-[1.08] tracking-normal sm:text-[1.8rem]'>
             {service.title}
           </h3>
-          <p className={`mt-5 max-w-xl text-[15px] leading-7 ${isBlue ? 'text-white/82' : 'text-gray-600 dark:text-gray-300'}`}>
+          <p className={`mt-6 max-w-xl text-[15px] leading-7 ${isBlue ? 'text-white/82' : 'text-gray-600 dark:text-gray-300'}`}>
             {service.summary || service.description}
           </p>
 
-          <div className='mt-4 flex flex-wrap gap-2'>
+          <div className='mt-6 flex flex-wrap gap-2.5'>
             {service.features.slice(0, 2).map((feature) => (
               <span
                 key={feature}
-                className={`rounded-full px-3 py-1 text-[11px] font-bold leading-5 ring-1 ${
+                className={`rounded-full px-4 py-1.5 text-[11px] font-bold leading-5 ring-1 ${
                   isBlue
                     ? 'bg-white/12 text-white ring-white/18'
                     : 'bg-primary/7 text-gray-700 ring-primary/10 dark:bg-white/8 dark:text-white/78 dark:ring-white/10'
@@ -131,18 +131,20 @@ const ServiceShowcaseCard = ({ service, index, onOpen }) => {
           </div>
         </div>
 
-        <button
-          type='button'
-          onClick={() => onOpen(service)}
-          className={`mt-auto inline-flex w-max items-center gap-2 rounded-full px-5 py-2.5 text-xs font-extrabold transition hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-            isBlue
-              ? 'bg-white text-primary focus-visible:ring-white focus-visible:ring-offset-primary'
-              : 'bg-primary text-white focus-visible:ring-primary dark:ring-offset-gray-950'
-          }`}
-        >
-          View Details
-          <img src={assets.arrow_icon} alt='' className={`w-3 ${isBlue ? 'invert' : ''}`} />
-        </button>
+        <div className='mt-auto pt-8'>
+          <button
+            type='button'
+            onClick={() => onOpen(service)}
+            className={`inline-flex w-max items-center gap-2 rounded-full px-5 py-2.5 text-xs font-extrabold transition hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+              isBlue
+                ? 'bg-white text-primary focus-visible:ring-white focus-visible:ring-offset-primary'
+                : 'bg-primary text-white focus-visible:ring-primary dark:ring-offset-gray-950'
+            }`}
+          >
+            View Details
+            <img src={assets.arrow_icon} alt='' className={`w-3 ${isBlue ? 'invert' : ''}`} />
+          </button>
+        </div>
       </div>
     </Motion.article>
   )
