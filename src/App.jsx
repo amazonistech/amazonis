@@ -115,6 +115,13 @@ const App = () => {
     const handleMouseMove = (event) => {
       mouse.current.x = event.clientX
       mouse.current.y = event.clientY
+
+      const useLightCursor = event.target.closest?.('[data-cursor-light]')
+
+      if (dotRef.current && outlineRef.current) {
+        dotRef.current.style.backgroundColor = useLightCursor ? '#ffffff' : '#0040c1'
+        outlineRef.current.style.borderColor = useLightCursor ? '#ffffff' : '#0040c1'
+      }
     }
 
     document.addEventListener('mousemove', handleMouseMove)
@@ -172,11 +179,11 @@ const App = () => {
       <div
         ref={outlineRef}
         className='fixed top-0 left-0 h-10 w-10 rounded-full border border-primary pointer-events-none z-[9999] max-sm:hidden'
-        style={{ transition: 'transform 0.1s ease-out' }}
+        style={{ transition: 'transform 0.1s ease-out, border-color 0.2s ease' }}
       />
       <div
         ref={dotRef}
-        className='fixed top-0 left-0 h-3 w-3 rounded-full bg-primary pointer-events-none z-[9999] max-sm:hidden'
+        className='fixed top-0 left-0 h-3 w-3 rounded-full bg-primary pointer-events-none z-[9999] max-sm:hidden transition-colors duration-200'
       />
     </div>
   )

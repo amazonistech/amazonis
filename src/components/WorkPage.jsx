@@ -312,6 +312,7 @@ const WorkPage = () => {
 
       <section className='px-4 pb-6 sm:px-12 lg:px-24 xl:px-40'>
         <Motion.div
+          data-cursor-light
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
