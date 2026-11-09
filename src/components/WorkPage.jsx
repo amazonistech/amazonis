@@ -127,7 +127,7 @@ const WorkPage = () => {
 
   return (
     <main className='overflow-hidden bg-[#f3f3f1] text-[#0b1324] dark:bg-[#070b14] dark:text-white'>
-      <section className='px-4 pb-14 pt-14 sm:px-12 sm:pb-20 sm:pt-20 lg:px-24 xl:px-40'>
+      <section className='px-4 pb-12 pt-12 sm:px-12 sm:pb-16 sm:pt-16 lg:px-24 xl:px-40'>
         <div className='mx-auto max-w-7xl'>
           <Motion.div
             initial={{ opacity: 0, y: 18 }}
@@ -139,7 +139,7 @@ const WorkPage = () => {
             Selected digital work
           </Motion.div>
 
-          <div className='mt-12 grid items-end gap-7 md:grid-cols-[0.9fr_1.1fr] md:gap-12'>
+          <div className='mt-10 grid items-end gap-7 md:grid-cols-[0.9fr_1.1fr] md:gap-12 sm:mt-12'>
             <div className='hidden md:block' />
             <div>
               <div className='overflow-hidden'>
@@ -167,7 +167,7 @@ const WorkPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.5 }}
-            className='mt-14 flex flex-wrap gap-2 border-t border-black/10 pt-6 dark:border-white/10 sm:mt-20'
+            className='mt-10 flex flex-wrap gap-2 border-t border-black/10 pt-5 dark:border-white/10 sm:mt-14 sm:pt-6'
           >
             {categories.map((category) => {
               const isActive = activeCategory === category
@@ -191,8 +191,8 @@ const WorkPage = () => {
         </div>
       </section>
 
-      <section className='px-4 pb-24 sm:px-12 lg:px-24 xl:px-40'>
-        <Motion.div layout className='mx-auto grid max-w-7xl grid-cols-1 gap-x-3 gap-y-9 sm:grid-cols-2 lg:grid-cols-12'>
+      <section className='px-4 pb-20 sm:px-12 lg:px-24 xl:px-40'>
+        <Motion.div layout className='mx-auto grid max-w-7xl grid-cols-1 gap-x-3 gap-y-7 sm:grid-cols-2 sm:gap-y-9 lg:grid-cols-12'>
           <AnimatePresence mode='popLayout'>
             {visibleProjects.map((project, index) => (
               <Motion.article
@@ -246,8 +246,8 @@ const WorkPage = () => {
         </Motion.div>
       </section>
 
-      <section className='px-4 py-20 sm:px-12 sm:py-28 lg:px-24 xl:px-40'>
-        <div className='mx-auto grid max-w-7xl gap-12 border-t border-black/10 pt-16 dark:border-white/10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:pt-24'>
+      <section className='px-4 py-16 sm:px-12 sm:py-20 lg:px-24 xl:px-40'>
+        <div className='mx-auto grid max-w-7xl gap-10 border-t border-black/10 pt-14 dark:border-white/10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:pt-20'>
           <Motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -310,7 +310,7 @@ const WorkPage = () => {
         </div>
       </section>
 
-      <section className='px-4 pb-6 sm:px-12 lg:px-24 xl:px-40'>
+      <section className='px-4 pb-0 sm:px-12 lg:px-24 xl:px-40'>
         <Motion.div
           data-cursor-light
           initial={{ opacity: 0, y: 40 }}
