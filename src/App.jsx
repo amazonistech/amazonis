@@ -173,7 +173,7 @@ const App = () => {
       {isSitemapPage && <SitemapPage />}
       {isNotFoundPage && <NotFound theme={theme} />}
 
-      {!isNotFoundPage && <Footer theme={theme} compact={isContactPage || isWorkPage} />}
+      {!isNotFoundPage && <Footer theme={theme} compact={isContactPage || isWorkPage || isServicesPage} />}
       {!isNotFoundPage && <BackToTopButton />}
 
       <div

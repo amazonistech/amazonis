@@ -66,6 +66,7 @@ const ServiceShowcaseCard = ({ service, index, onOpen }) => {
   return (
     <Motion.article
       {...fadeUp}
+      data-cursor-light={isBlue || undefined}
       transition={{ ...fadeUp.transition, delay: index * 0.035 }}
       className={`group relative isolate flex min-h-[360px] overflow-hidden rounded-[18px] p-6 ring-1 transition duration-500 hover:z-10 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(0,64,193,0.14)] ${
         isBlue
@@ -224,8 +225,8 @@ const ServicesPage = () => {
 
   return (
     <main className='overflow-hidden bg-[#f4f4f2] text-gray-900 dark:bg-black dark:text-white'>
-      <section className='px-4 py-8 sm:px-8 lg:px-14'>
-        <div className='mx-auto max-w-7xl overflow-hidden rounded-[22px] bg-white px-5 pb-16 pt-20 sm:px-10 sm:pb-24 sm:pt-28 lg:px-16 lg:pt-36 dark:bg-gray-950'>
+      <section className='px-4 py-6 sm:px-8 sm:py-8 lg:px-14'>
+        <div className='mx-auto max-w-7xl overflow-hidden rounded-[22px] bg-white px-5 pb-14 pt-16 sm:px-10 sm:pb-16 sm:pt-20 lg:px-16 lg:pt-24 dark:bg-gray-950'>
           <Motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -235,7 +236,7 @@ const ServicesPage = () => {
             <h1 className='text-6xl font-extrabold uppercase leading-none tracking-normal text-gray-950 sm:text-7xl lg:text-8xl dark:text-white'>
               Services
             </h1>
-            <p className='mx-auto mt-8 max-w-3xl text-sm leading-7 text-gray-600 sm:text-base dark:text-gray-400'>
+            <p className='mx-auto mt-6 max-w-3xl text-sm leading-7 text-gray-600 sm:text-base dark:text-gray-400'>
               At Amazonis IT Services, we help businesses use technology in a simple and practical
               way, from planning to launch and beyond.
             </p>
@@ -245,7 +246,7 @@ const ServicesPage = () => {
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.12 }}
-            className='mt-20 grid gap-4 md:grid-cols-[0.8fr_1.2fr_0.8fr] lg:mt-28'
+            className='mt-14 grid gap-4 md:grid-cols-[0.8fr_1.2fr_0.8fr] sm:mt-16'
           >
             <div className='hidden overflow-hidden rounded-[16px] bg-gray-100 md:block dark:bg-gray-900'>
               <img src={assets.bgImage1} alt='Planning workspace' className='h-72 w-full object-cover' />
@@ -258,7 +259,7 @@ const ServicesPage = () => {
             </div>
           </Motion.div>
 
-          <div className='mt-24 grid gap-12 border-b border-gray-200 pb-20 lg:mt-32 lg:grid-cols-[1fr_1.15fr] lg:gap-24 dark:border-gray-800'>
+          <div className='mt-16 grid gap-10 border-b border-gray-200 pb-16 lg:grid-cols-[1fr_1.15fr] lg:gap-16 dark:border-gray-800'>
             <Motion.div {...fadeUp}>
               <p className={eyebrowClass}>What We Build</p>
               <h2 className='mt-7 max-w-xl text-4xl font-extrabold uppercase leading-tight tracking-normal text-gray-950 sm:text-5xl lg:text-6xl dark:text-white'>
@@ -293,7 +294,7 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      <section className='bg-white px-4 py-14 sm:px-12 lg:px-24 lg:py-18 xl:px-40 dark:bg-gray-950'>
+      <section className='bg-white px-4 py-14 sm:px-12 lg:px-24 lg:py-16 xl:px-40 dark:bg-gray-950'>
         <div className='mx-auto max-w-7xl'>
           <Motion.div {...fadeUp} className='max-w-4xl'>
             <p className={eyebrowClass}>Our Services</p>
@@ -315,7 +316,7 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      <section className='bg-[#f4f4f2] px-4 py-20 sm:px-12 lg:px-24 xl:px-40 dark:bg-black'>
+      <section className='bg-[#f4f4f2] px-4 py-16 sm:px-12 sm:py-20 lg:px-24 xl:px-40 dark:bg-black'>
         <div className='mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr]'>
           <Motion.div {...fadeUp} className='lg:sticky lg:top-28 lg:h-max'>
             <p className={eyebrowClass}>How We Work</p>
@@ -373,7 +374,7 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      <section className='bg-white px-4 py-20 sm:px-12 lg:px-24 xl:px-40 dark:bg-gray-950'>
+      <section className='bg-white px-4 py-16 sm:px-12 sm:py-20 lg:px-24 xl:px-40 dark:bg-gray-950'>
         <div className='mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start'>
           <Motion.div {...fadeUp}>
             <p className={eyebrowClass}>What You Can Expect</p>
@@ -403,8 +404,8 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      <section className='bg-white px-4 py-20 sm:px-12 lg:px-24 xl:px-40 dark:bg-gray-950'>
-        <div className='mx-auto grid max-w-6xl gap-8 rounded-[18px] bg-primary p-7 text-white sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center'>
+      <section className='bg-white px-4 py-16 sm:px-12 sm:py-20 lg:px-24 xl:px-40 dark:bg-gray-950'>
+        <div data-cursor-light className='mx-auto grid max-w-6xl gap-8 rounded-[18px] bg-primary p-7 text-white sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center'>
           <Motion.div {...fadeUp}>
             <p className='text-[11px] font-extrabold uppercase tracking-[0.18em] text-white/70'>
               Start a Project
