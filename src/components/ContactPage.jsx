@@ -92,9 +92,9 @@ const ContactPage = () => {
   }
 
   return (
-    <main className='overflow-hidden bg-[#f4f4f2] text-gray-900 dark:bg-black dark:text-white'>
+    <main className='overflow-hidden bg-white text-gray-900 dark:bg-black dark:text-white'>
       <section className='px-4 py-8 sm:px-8 lg:px-14'>
-        <div className='mx-auto max-w-7xl overflow-hidden rounded-[22px] bg-white px-5 pb-16 pt-20 sm:px-10 sm:pb-24 sm:pt-28 lg:px-16 lg:pt-36 dark:bg-gray-950'>
+        <div className='mx-auto max-w-7xl px-5 pb-16 pt-20 sm:px-10 sm:pb-24 sm:pt-28 lg:px-16 lg:pt-36'>
           <Motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -110,27 +110,6 @@ const ContactPage = () => {
             </p>
           </Motion.div>
 
-          <Motion.div
-            initial={{ opacity: 0, y: 36 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.12 }}
-            className='mt-20 grid gap-4 md:grid-cols-[1fr_0.72fr_1fr] lg:mt-28'
-          >
-            <div className='overflow-hidden rounded-[16px] bg-gray-100 dark:bg-gray-900'>
-              <img src={assets.bgImage2} alt='Amazonis contact workspace' className='h-72 w-full object-cover' />
-            </div>
-            <div className='hidden rounded-[16px] bg-primary p-7 text-white md:flex md:flex-col md:justify-end'>
-              <p className='text-[11px] font-extrabold uppercase tracking-[0.18em] text-white/70'>
-                Response
-              </p>
-              <p className='mt-4 text-4xl font-extrabold uppercase leading-tight'>
-                Clear communication from day one.
-              </p>
-            </div>
-            <div className='hidden overflow-hidden rounded-[16px] bg-gray-100 md:block dark:bg-gray-900'>
-              <img src={assets.work_dashboard_management} alt='Amazonis project dashboard' className='h-72 w-full object-cover' />
-            </div>
-          </Motion.div>
         </div>
       </section>
 
@@ -295,8 +274,8 @@ const ContactPage = () => {
         </div>
       </section>
 
-      <section className='bg-[#f4f4f2] px-4 py-20 sm:px-12 lg:px-24 xl:px-40 dark:bg-black'>
-        <div className='mx-auto max-w-6xl overflow-hidden rounded-[18px] bg-white p-3 dark:bg-gray-950'>
+      <section className='bg-white px-4 py-20 sm:px-12 lg:px-24 xl:px-40 dark:bg-black'>
+        <div className='mx-auto max-w-6xl'>
           <iframe
             title='Amazonis office location map'
             src={mapUrl}
