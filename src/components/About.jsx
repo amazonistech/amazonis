@@ -151,7 +151,7 @@ const About = () => {
             </h2>
           </Motion.div>
 
-          <div className='mt-12 grid gap-5 lg:grid-cols-3'>
+          <div className='mt-6 grid gap-5 lg:grid-cols-3'>
             {products.map((product, index) => (
               <Motion.a
                 key={product.name}
