@@ -68,6 +68,16 @@ const OurWork = () => {
           </Motion.article>
         ))}
       </div>
+
+      <Motion.a
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        href='/work'
+        className='rounded-full bg-primary px-6 py-3 text-sm font-bold text-white transition-transform hover:scale-105'
+      >
+        View all work ↗
+      </Motion.a>
     </Motion.div>
   )
 }

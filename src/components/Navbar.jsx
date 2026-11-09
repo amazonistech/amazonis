@@ -25,6 +25,11 @@ const Navbar = ({ theme, setTheme, currentPath }) => {
       return
     }
 
+    if (normalizedPath === '/work') {
+      setActiveHref('/work')
+      return
+    }
+
     if (normalizedPath === '/contact') {
       setActiveHref('/contact')
       return

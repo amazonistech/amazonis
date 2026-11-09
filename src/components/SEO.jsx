@@ -70,6 +70,24 @@ const pageMeta = {
       url: `${siteUrl}/services`,
     },
   },
+  '/work': {
+    title: 'Our Work | Amazonis Technologies',
+    description:
+      'Explore websites, SaaS platforms, mobile apps, AI automations and digital growth systems designed and built by Amazonis.',
+    path: '/work',
+    type: 'website',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Amazonis Work',
+      url: `${siteUrl}/work`,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: siteName,
+        url: siteUrl,
+      },
+    },
+  },
   '/contact': {
     title: 'Amazonis | Technologies',
     description:

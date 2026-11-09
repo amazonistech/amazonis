@@ -1,7 +1,7 @@
 const navigationLinks = [
   { name: 'Home', href: '/#hero' },
   { name: 'Services', href: '/services' },
-  { name: 'Work', href: '/#our-work' },
+  { name: 'Work', href: '/work' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ]

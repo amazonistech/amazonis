@@ -16,11 +16,13 @@ import SitemapPage from './components/SitemapPage'
 import ContactPage from './components/ContactPage'
 import ServicesPage from './components/ServicesPage'
 import BackToTopButton from './components/BackToTopButton'
+import WorkPage from './components/WorkPage'
 
 const appRoutes = [
   '/',
   '/about',
   '/services',
+  '/work',
   '/contact',
   '/privacy-policy',
   '/terms-and-conditions',
@@ -48,6 +50,7 @@ const App = () => {
   const isHomePage = normalizedPath === '/'
   const isAboutPage = normalizedPath === '/about'
   const isServicesPage = normalizedPath === '/services'
+  const isWorkPage = normalizedPath === '/work'
   const isContactPage = normalizedPath === '/contact'
   const isPrivacyPolicyPage = normalizedPath === '/privacy-policy'
   const isLegalPage = [
@@ -156,6 +159,7 @@ const App = () => {
 
       {isAboutPage && <About />}
       {isServicesPage && <ServicesPage />}
+      {isWorkPage && <WorkPage />}
       {isContactPage && <ContactPage />}
       {isPrivacyPolicyPage && <PrivacyPolicy />}
       {isLegalPage && <LegalPage path={normalizedPath} />}
