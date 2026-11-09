@@ -191,7 +191,7 @@ const WorkPage = () => {
         </div>
       </section>
 
-      <section className='px-4 pb-20 sm:px-12 lg:px-24 xl:px-40'>
+      <section className='px-4 pb-12 sm:px-12 lg:px-24 xl:px-40'>
         <Motion.div layout className='mx-auto grid max-w-7xl grid-cols-1 gap-x-3 gap-y-7 sm:grid-cols-2 sm:gap-y-9 lg:grid-cols-12'>
           <AnimatePresence mode='popLayout'>
             {visibleProjects.map((project, index) => (
@@ -246,8 +246,8 @@ const WorkPage = () => {
         </Motion.div>
       </section>
 
-      <section className='px-4 py-16 sm:px-12 sm:py-20 lg:px-24 xl:px-40'>
-        <div className='mx-auto grid max-w-7xl gap-10 border-t border-black/10 pt-14 dark:border-white/10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:pt-20'>
+      <section className='px-4 py-12 sm:px-12 sm:py-16 lg:px-24 xl:px-40'>
+        <div className='mx-auto grid max-w-7xl gap-10 border-t border-black/10 pt-10 dark:border-white/10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14 lg:pt-12'>
           <Motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -310,17 +310,17 @@ const WorkPage = () => {
         </div>
       </section>
 
-      <section className='px-4 pb-0 sm:px-12 lg:px-24 xl:px-40'>
+      <section className='px-4 pb-12 sm:px-12 sm:pb-16 lg:px-24 xl:px-40'>
         <Motion.div
           data-cursor-light
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: 30 }}
+          whileInView={{ y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           className='mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 rounded-[2rem] bg-primary px-7 py-10 text-white sm:px-12 sm:py-14 md:flex-row md:items-end'
         >
           <div>
-            <p className='text-xs font-bold uppercase tracking-[0.2em] text-white/70'>Have a project in mind?</p>
+            <p className='text-xs font-bold uppercase tracking-[0.2em] text-white/90'>Have a project in mind?</p>
             <h2 className='mt-5 max-w-3xl text-4xl font-extrabold leading-tight tracking-[-0.04em] sm:text-6xl'>
               Let&apos;s build the next one together.
             </h2>
