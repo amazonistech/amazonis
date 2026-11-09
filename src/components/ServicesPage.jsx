@@ -246,17 +246,13 @@ const ServicesPage = () => {
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.12 }}
-            className='mt-14 grid gap-4 md:grid-cols-[0.8fr_1.2fr_0.8fr] sm:mt-16'
+            className='mt-14 overflow-hidden rounded-[18px] bg-[#eaf2ff] sm:mt-16'
           >
-            <div className='hidden overflow-hidden rounded-[16px] bg-gray-100 md:block dark:bg-gray-900'>
-              <img src={assets.bgImage1} alt='Planning workspace' className='h-72 w-full object-cover' />
-            </div>
-            <div className='overflow-hidden rounded-[16px] bg-gray-100 dark:bg-gray-900'>
-              <img src={assets.work_dashboard_management} alt='Digital services dashboard' className='h-72 w-full object-cover' />
-            </div>
-            <div className='hidden overflow-hidden rounded-[16px] bg-gray-100 md:block dark:bg-gray-900'>
-              <img src={assets.work_mobile_app} alt='Mobile app service preview' className='h-72 w-full object-cover' />
-            </div>
+            <img
+              src={assets.services_ai_ecosystem}
+              alt='Connected digital services including websites, applications, cloud systems, AI automation and analytics'
+              className='h-auto max-h-[470px] w-full object-cover object-center'
+            />
           </Motion.div>
 
           <div className='mt-16 grid gap-10 border-b border-gray-200 pb-16 lg:grid-cols-[1fr_1.15fr] lg:gap-16 dark:border-gray-800'>
