@@ -72,10 +72,11 @@ const ContactUs = () => {
         <input type='checkbox' name='botcheck' className='hidden' tabIndex='-1' autoComplete='off' />
 
         <div>
-          <p className='mb-2 text-sm font-medium'>Your name</p>
+          <label htmlFor='homepage-name' className='mb-2 block text-sm font-medium'>Your name</label>
           <div className='flex rounded-lg border border-gray-300 pl-3 dark:border-gray-600'>
             <img src={assets.person_icon} alt='' />
             <input
+              id='homepage-name'
               name='name'
               type='text'
               placeholder='Enter your name'
@@ -86,10 +87,11 @@ const ContactUs = () => {
         </div>
 
         <div>
-          <p className='mb-2 text-sm font-medium'>Email id</p>
+          <label htmlFor='homepage-email' className='mb-2 block text-sm font-medium'>Email id</label>
           <div className='flex rounded-lg border border-gray-300 pl-3 dark:border-gray-600'>
             <img src={assets.email_icon} alt='' />
             <input
+              id='homepage-email'
               name='email'
               type='email'
               placeholder='Enter your email'
@@ -100,8 +102,9 @@ const ContactUs = () => {
         </div>
 
         <div className='sm:col-span-2'>
-          <p className='mb-2 text-sm font-medium'>Message</p>
+          <label htmlFor='homepage-message' className='mb-2 block text-sm font-medium'>Message</label>
           <textarea
+            id='homepage-message'
             name='message'
             rows={8}
             placeholder='Enter your message'

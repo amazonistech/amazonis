@@ -77,6 +77,8 @@ const Navbar = ({ theme, setTheme, currentPath }) => {
           src={theme === 'dark' ? assets.logo_dark : assets.logo}
           className='w-32 sm:w-40'
           alt='Amazonis'
+          width='160'
+          height='31'
         />
       </a>
 

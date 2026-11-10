@@ -51,6 +51,10 @@ const OurWork = () => {
                 src={work.image}
                 alt={work.title}
                 className='h-full w-full object-cover transition-transform duration-500 group-hover:scale-105'
+                width='640'
+                height='434'
+                loading='lazy'
+                decoding='async'
               />
             </div>
 

@@ -155,7 +155,7 @@ const WorkPage = () => {
               <Motion.p
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.35 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
                 className='mt-7 max-w-xl text-sm leading-7 text-gray-600 dark:text-gray-300 sm:text-base'
               >
                 Explore digital products and platforms designed around real business goals, clear user journeys and dependable technology.
@@ -166,7 +166,7 @@ const WorkPage = () => {
           <Motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.5 }}
+            transition={{ duration: 0.45, delay: 0.16 }}
             className='mt-10 flex flex-wrap gap-2 border-t border-black/10 pt-5 dark:border-white/10 sm:mt-14 sm:pt-6'
           >
             {categories.map((category) => {
@@ -217,6 +217,9 @@ const WorkPage = () => {
                       src={project.image}
                       alt={project.title}
                       loading={index > 1 ? 'lazy' : 'eager'}
+                      decoding='async'
+                      width='640'
+                      height='434'
                       className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.045] ${project.position}`}
                     />
                   </Motion.div>

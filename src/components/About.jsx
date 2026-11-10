@@ -13,12 +13,12 @@ const eyebrowClass =
   'inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.18em] text-gray-900 dark:text-white before:h-2 before:w-2 before:rounded-full before:bg-primary'
 
 const imageTiles = [
-  { src: assets.bgImage1, alt: 'Team collaboration note', className: 'h-36 sm:h-48 lg:h-56' },
+  { src: assets.work_dashboard_management, alt: 'Team collaboration dashboard', className: 'h-36 sm:h-48 lg:h-56' },
   { src: assets.work_dashboard_management, alt: 'Digital dashboard planning', className: 'h-28 sm:h-36 lg:h-40' },
   { src: assets.group_profile, alt: 'Amazonis project team', className: 'h-34 sm:h-44 lg:h-52' },
   { src: assets.hero_img, alt: 'Mobile technology solution', className: 'h-40 sm:h-56 lg:h-64' },
   { src: assets.work_mobile_app, alt: 'Mobile application interface', className: 'h-28 sm:h-36 lg:h-40' },
-  { src: assets.bgImage2, alt: 'Professional using digital tools', className: 'h-34 sm:h-44 lg:h-52' },
+  { src: assets.work_fitness_app, alt: 'Digital product interface', className: 'h-34 sm:h-44 lg:h-52' },
 ]
 
 const buildItems = [
@@ -59,12 +59,14 @@ const products = [
   {
     name: 'Venuefy',
     mark: assets.venuefy_logo,
+    hoverMark: assets.venuefy_logo_hover,
     text: 'A venue discovery and booking platform for wedding venues, banquet halls and event spaces.',
     href: 'https://venuefy.in/',
   },
   {
     name: 'Slour',
     mark: assets.slour_logo,
+    hoverMark: assets.slour_logo_hover,
     text: 'An AI-powered social media management platform for creators, agencies and marketing teams.',
     href: 'https://slour.in/',
   },
@@ -73,6 +75,7 @@ const products = [
     mark: assets.inphra_logo,
     text: 'A business operations product built to support real-world project and team management.',
     href: 'https://inphra.in/',
+    blurred: true,
   },
 ]
 
@@ -109,7 +112,12 @@ const About = () => {
                   tile.className
                 } ${index === 0 || index === 5 ? 'max-md:hidden' : ''}`}
               >
-                <img src={tile.src} alt={tile.alt} className='h-full w-full object-cover' />
+                <img
+                  src={tile.src}
+                  alt={tile.alt}
+                  className='h-full w-full object-cover'
+                  decoding='async'
+                />
               </div>
             ))}
           </Motion.div>
@@ -158,12 +166,32 @@ const About = () => {
                 href={product.href}
                 target='_blank'
                 rel='noopener noreferrer'
+                aria-disabled={product.blurred || undefined}
+                tabIndex={product.blurred ? -1 : undefined}
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: index * 0.08 }}
-                className='group flex min-h-72 flex-col rounded-[16px] border border-gray-200 bg-[#f8f8f7] p-7 transition hover:-translate-y-1 hover:border-primary dark:border-gray-800 dark:bg-gray-900'
+                className={`group flex min-h-72 flex-col rounded-[16px] border border-gray-200 bg-[#f8f8f7] p-7 transition dark:border-gray-800 dark:bg-gray-900 ${
+                  product.blurred
+                    ? 'pointer-events-none select-none blur-[6px] opacity-55'
+                    : 'hover:-translate-y-1 hover:border-primary'
+                }`}
               >
-                <span className='grid h-20 w-20 place-items-center rounded-full bg-white p-4 dark:bg-black'>
-                  <img src={product.mark} alt={`${product.name} logo`} className='max-h-full max-w-full object-contain' />
+                <span className='relative grid h-20 w-20 place-items-center rounded-full bg-white p-4 dark:bg-black'>
+                  <img
+                    src={product.mark}
+                    alt={`${product.name} logo`}
+                    className={`max-h-full max-w-full object-contain transition-opacity duration-300 ${
+                      product.hoverMark ? 'group-hover:opacity-0' : ''
+                    }`}
+                  />
+                  {product.hoverMark && (
+                    <img
+                      src={product.hoverMark}
+                      alt=''
+                      aria-hidden='true'
+                      className='absolute inset-4 h-[calc(100%-2rem)] w-[calc(100%-2rem)] object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100'
+                    />
+                  )}
                 </span>
                 <h3 className='mt-8 text-3xl font-extrabold'>{product.name}</h3>
                 <p className='mt-4 flex-1 text-base leading-7 text-gray-600 dark:text-gray-400'>
@@ -191,6 +219,10 @@ const About = () => {
                 src={assets.work_fitness_app}
                 alt='Amazonis digital product work'
                 className='h-72 w-full object-cover sm:h-96'
+                width='640'
+                height='434'
+                loading='lazy'
+                decoding='async'
               />
             </div>
             <div className='mt-8 space-y-5 text-base leading-8 text-gray-600 dark:text-gray-400'>

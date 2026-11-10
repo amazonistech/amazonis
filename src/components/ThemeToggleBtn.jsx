@@ -2,12 +2,6 @@ import React, { useEffect } from 'react'
 import assets from '../assets/assets'
 
 const ThemeToggleBtn = ({theme, setTheme}) => {
-
-    useEffect(()=>{
-        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches; 
-        setTheme(theme || (prefersDarkMode ? 'dark' : 'light'))
-    },[setTheme, theme])
-
     useEffect(()=>{
         if(theme === 'dark'){
             document.documentElement.classList.add('dark')
@@ -18,15 +12,20 @@ const ThemeToggleBtn = ({theme, setTheme}) => {
     },[theme])
 
   return (
-    <>
-      <button>
-        {theme === 'dark' ? (
-            <img onClick={()=> setTheme('light')} src={assets.sun_icon} className='size-8.5 p-1.5 border border-gray-500 rounded-full' alt="" />
-        ) : (
-            <img onClick={()=> setTheme('dark')} src={assets.moon_icon} className='size-8.5 p-1.5 border border-gray-500 rounded-full' alt="" />
-        )}
-      </button>
-    </>
+    <button
+      type='button'
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+      className='rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2'
+    >
+      <img
+        src={theme === 'dark' ? assets.sun_icon : assets.moon_icon}
+        className='size-8.5 rounded-full border border-gray-500 p-1.5'
+        alt=''
+        width='34'
+        height='34'
+      />
+    </button>
   )
 }
 

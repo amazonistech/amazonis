@@ -1,22 +1,23 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import TrustedBy from './components/TrustedBy'
 import Services from './components/Services'
 import OurWork from './components/OurWork'
 import ContactUs from './components/ContactUs'
-import About from './components/About'
-import NotFound from './components/NotFound'
 import { Toaster } from 'react-hot-toast'
 import Footer from './components/Footer'
-import PrivacyPolicy from './components/PrivacyPolicy'
 import SEO from './components/SEO'
-import LegalPage from './components/LegalPage'
-import SitemapPage from './components/SitemapPage'
-import ContactPage from './components/ContactPage'
-import ServicesPage from './components/ServicesPage'
 import BackToTopButton from './components/BackToTopButton'
-import WorkPage from './components/WorkPage'
+
+const About = lazy(() => import('./components/About'))
+const ContactPage = lazy(() => import('./components/ContactPage'))
+const LegalPage = lazy(() => import('./components/LegalPage'))
+const NotFound = lazy(() => import('./components/NotFound'))
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'))
+const ServicesPage = lazy(() => import('./components/ServicesPage'))
+const SitemapPage = lazy(() => import('./components/SitemapPage'))
+const WorkPage = lazy(() => import('./components/WorkPage'))
 
 const appRoutes = [
   '/',
@@ -36,9 +37,10 @@ const appRoutes = [
 ]
 
 const App = () => {
-  const [theme, setTheme] = useState(
-    localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light'
-  )
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme')
+    return savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+  })
   const [currentPath, setCurrentPath] = useState(window.location.pathname)
 
   const dotRef = useRef(null)
@@ -112,6 +114,32 @@ const App = () => {
   }, [])
 
   useEffect(() => {
+    const finePointer = window.matchMedia('(pointer: fine) and (min-width: 640px)')
+
+    if (!finePointer.matches) {
+      return undefined
+    }
+
+    let animationFrame
+    let isAnimating = false
+
+    const animate = () => {
+      position.current.x += (mouse.current.x - position.current.x) * 0.18
+      position.current.y += (mouse.current.y - position.current.y) * 0.18
+
+      if (outlineRef.current) {
+        outlineRef.current.style.transform = `translate3d(${position.current.x - 20}px, ${position.current.y - 20}px, 0)`
+      }
+
+      const distance = Math.abs(mouse.current.x - position.current.x) + Math.abs(mouse.current.y - position.current.y)
+
+      if (distance > 0.25) {
+        animationFrame = requestAnimationFrame(animate)
+      } else {
+        isAnimating = false
+      }
+    }
+
     const handleMouseMove = (event) => {
       mouse.current.x = event.clientX
       mouse.current.y = event.clientY
@@ -119,27 +147,20 @@ const App = () => {
       const useLightCursor = event.target.closest?.('[data-cursor-light]')
 
       if (dotRef.current && outlineRef.current) {
+        dotRef.current.style.opacity = '1'
+        outlineRef.current.style.opacity = '1'
         dotRef.current.style.backgroundColor = useLightCursor ? '#ffffff' : '#0040c1'
         outlineRef.current.style.borderColor = useLightCursor ? '#ffffff' : '#0040c1'
+        dotRef.current.style.transform = `translate3d(${event.clientX - 6}px, ${event.clientY - 6}px, 0)`
+      }
+
+      if (!isAnimating) {
+        isAnimating = true
+        animationFrame = requestAnimationFrame(animate)
       }
     }
 
     document.addEventListener('mousemove', handleMouseMove)
-
-    let animationFrame
-    const animate = () => {
-      position.current.x += (mouse.current.x - position.current.x) * 0.1
-      position.current.y += (mouse.current.y - position.current.y) * 0.1
-
-      if (dotRef.current && outlineRef.current) {
-        dotRef.current.style.transform = `translate3d(${mouse.current.x - 6}px, ${mouse.current.y - 6}px, 0)`
-        outlineRef.current.style.transform = `translate3d(${position.current.x - 20}px, ${position.current.y - 20}px, 0)`
-      }
-
-      animationFrame = requestAnimationFrame(animate)
-    }
-
-    animate()
 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove)
@@ -164,14 +185,16 @@ const App = () => {
         </>
       )}
 
-      {isAboutPage && <About />}
-      {isServicesPage && <ServicesPage />}
-      {isWorkPage && <WorkPage />}
-      {isContactPage && <ContactPage />}
-      {isPrivacyPolicyPage && <PrivacyPolicy />}
-      {isLegalPage && <LegalPage path={normalizedPath} />}
-      {isSitemapPage && <SitemapPage />}
-      {isNotFoundPage && <NotFound theme={theme} />}
+      <Suspense fallback={<main className='min-h-[60vh]' aria-busy='true' />}>
+        {isAboutPage && <About />}
+        {isServicesPage && <ServicesPage />}
+        {isWorkPage && <WorkPage />}
+        {isContactPage && <ContactPage />}
+        {isPrivacyPolicyPage && <PrivacyPolicy />}
+        {isLegalPage && <LegalPage path={normalizedPath} />}
+        {isSitemapPage && <SitemapPage />}
+        {isNotFoundPage && <NotFound theme={theme} />}
+      </Suspense>
 
       {!isNotFoundPage && <Footer theme={theme} compact={isContactPage || isWorkPage || isServicesPage} />}
       {!isNotFoundPage && <BackToTopButton />}
@@ -179,11 +202,12 @@ const App = () => {
       <div
         ref={outlineRef}
         className='fixed top-0 left-0 h-10 w-10 rounded-full border border-primary pointer-events-none z-[9999] max-sm:hidden'
-        style={{ transition: 'transform 0.1s ease-out, border-color 0.2s ease' }}
+        style={{ opacity: 0, transition: 'border-color 0.2s ease, opacity 0.2s ease' }}
       />
       <div
         ref={dotRef}
         className='fixed top-0 left-0 h-3 w-3 rounded-full bg-primary pointer-events-none z-[9999] max-sm:hidden transition-colors duration-200'
+        style={{ opacity: 0 }}
       />
     </div>
   )
