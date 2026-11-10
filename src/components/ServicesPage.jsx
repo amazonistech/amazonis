@@ -74,13 +74,15 @@ const ServiceShowcaseCard = ({ service, index, onOpen }) => {
           : 'bg-white text-gray-950 ring-gray-200 dark:bg-gray-950 dark:text-white dark:ring-gray-800'
       }`}
     >
-      <img
-        src={serviceImages[index % serviceImages.length]}
-        alt=''
-        className={`absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110 group-hover:opacity-20 group-focus-within:scale-110 group-focus-within:opacity-20 ${
-          isBlue ? 'opacity-22 mix-blend-screen' : 'opacity-10 grayscale group-hover:grayscale-0'
-        }`}
-      />
+      {index !== 5 && (
+        <img
+          src={serviceImages[index % serviceImages.length]}
+          alt=''
+          className={`absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110 group-hover:opacity-20 group-focus-within:scale-110 group-focus-within:opacity-20 ${
+            isBlue ? 'opacity-22 mix-blend-screen' : 'opacity-10 grayscale group-hover:grayscale-0'
+          }`}
+        />
+      )}
       <div
         className={`absolute inset-0 ${
           isBlue
