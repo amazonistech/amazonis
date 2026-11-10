@@ -244,19 +244,6 @@ const ServicesPage = () => {
             </p>
           </Motion.div>
 
-          <Motion.div
-            initial={{ opacity: 0, y: 36 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.12 }}
-            className='mt-14 overflow-hidden rounded-[18px] bg-[#eaf2ff] sm:mt-16'
-          >
-            <img
-              src={assets.services_ai_ecosystem}
-              alt='Connected digital services including websites, applications, cloud systems, AI automation and analytics'
-              className='h-auto max-h-[470px] w-full object-cover object-center'
-            />
-          </Motion.div>
-
           <div className='mt-16 grid gap-10 border-b border-gray-200 pb-16 lg:grid-cols-[1fr_1.15fr] lg:gap-16 dark:border-gray-800'>
             <Motion.div {...fadeUp}>
               <p className={eyebrowClass}>What We Build</p>
