@@ -39,17 +39,8 @@ const ProductCard = ({ product, index }) => {
           <img
             src={product.logo}
             alt={`${product.title} logo`}
-            className={`h-full w-full object-contain p-5 transition-opacity duration-300 ${
-              product.hoverLogo ? 'group-hover:opacity-0' : ''
-            }`}
+            className='h-full w-full object-contain p-3'
           />
-          {product.hoverLogo && (
-            <img
-              src={product.hoverLogo}
-              alt=''
-              className='absolute inset-0 h-full w-full rounded-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100'
-            />
-          )}
         </div>
 
         <div className='relative mt-8 flex flex-1 flex-col'>
@@ -95,7 +86,6 @@ const OurProducts = () => {
       description: 'Discover, manage and book event venues with confidence.',
       category: 'Venue Discovery & Booking',
       logo: assets.venuefy_logo,
-      hoverLogo: assets.venuefy_logo_hover,
       hoverColor: '#162c53',
       glowColor: 'rgba(22, 44, 83, 0.14)',
       strongGlowColor: 'rgba(22, 44, 83, 0.24)',
@@ -107,7 +97,6 @@ const OurProducts = () => {
       description: 'Plan, schedule and automate content across social platforms.',
       category: 'AI Social Media Workspace',
       logo: assets.slour_logo,
-      hoverLogo: assets.slour_logo_hover,
       hoverColor: '#ef4444',
       glowColor: 'rgba(239, 68, 68, 0.14)',
       strongGlowColor: 'rgba(239, 68, 68, 0.24)',
@@ -119,7 +108,6 @@ const OurProducts = () => {
       description: 'Manage projects, teams, materials and site operations in one place.',
       category: 'Construction Management Platform',
       logo: assets.inphra_logo,
-      hoverLogo: assets.inphra_logo_hover,
       hoverColor: '#0959ed',
       glowColor: 'rgba(9, 89, 237, 0.14)',
       strongGlowColor: 'rgba(9, 89, 237, 0.24)',

@@ -59,14 +59,12 @@ const products = [
   {
     name: 'Venuefy',
     mark: assets.venuefy_logo,
-    hoverMark: assets.venuefy_logo_hover,
     text: 'A venue discovery and booking platform for wedding venues, banquet halls and event spaces.',
     href: 'https://venuefy.in/',
   },
   {
     name: 'Slour',
     mark: assets.slour_logo,
-    hoverMark: assets.slour_logo_hover,
     text: 'An AI-powered social media management platform for creators, agencies and marketing teams.',
     href: 'https://slour.in/',
   },
@@ -176,22 +174,12 @@ const About = () => {
                     : 'hover:-translate-y-1 hover:border-primary'
                 }`}
               >
-                <span className='relative grid h-20 w-20 place-items-center rounded-full bg-white p-4 dark:bg-black'>
+                <span className='relative grid h-20 w-20 place-items-center overflow-hidden rounded-full bg-white p-2.5 dark:bg-black'>
                   <img
                     src={product.mark}
                     alt={`${product.name} logo`}
-                    className={`max-h-full max-w-full object-contain transition-opacity duration-300 ${
-                      product.hoverMark ? 'group-hover:opacity-0' : ''
-                    }`}
+                    className='h-full w-full object-contain'
                   />
-                  {product.hoverMark && (
-                    <img
-                      src={product.hoverMark}
-                      alt=''
-                      aria-hidden='true'
-                      className='absolute inset-4 h-[calc(100%-2rem)] w-[calc(100%-2rem)] object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100'
-                    />
-                  )}
                 </span>
                 <h3 className='mt-8 text-3xl font-extrabold'>{product.name}</h3>
                 <p className='mt-4 flex-1 text-base leading-7 text-gray-600 dark:text-gray-400'>
