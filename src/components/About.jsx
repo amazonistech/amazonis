@@ -149,7 +149,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className='bg-white px-4 pb-20 sm:px-12 lg:px-24 xl:px-40 dark:bg-gray-950'>
+      <section className='bg-white px-4 pb-20 pt-14 sm:px-12 sm:pt-20 lg:px-24 xl:px-40 dark:bg-gray-950'>
         <div className='mx-auto max-w-6xl'>
           <Motion.div {...fadeUp} className='max-w-3xl'>
             <p className={eyebrowClass}>Products Developed by Amazonis</p>
