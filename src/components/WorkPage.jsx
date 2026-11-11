@@ -45,11 +45,10 @@ const projects = [
     title: 'Magpie Corporation',
     displayTitle: 'Magpie Corporation',
     category: 'Digital growth',
-    image: assets.client_magpie_corp,
+    image: assets.magpie_landing_page,
     logo: assets.client_magpie_corp,
     website: 'https://magpiecorporation.com/',
-    surface: 'bg-white',
-    contain: true,
+    surface: 'bg-[#182657]',
   },
 ]
 
