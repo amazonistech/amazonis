@@ -21,6 +21,7 @@ import work_dashboard_management from './work_dashboard_management.png'
 import slour_landing_page from './slour_landing_page.webp'
 import venuefy_landing_page from './venuefy_landing_page.webp'
 import amazonis_landing_page from './amazonis_landing_page.webp'
+import three_d_landing_page from './three_d_landing_page.webp'
 import email_icon from './email_icon.svg'
 import person_icon from './person_icon.svg'
 import facebook_icon from './facebook_icon.svg'
@@ -71,6 +72,7 @@ const assets = {
   slour_landing_page,
   venuefy_landing_page,
   amazonis_landing_page,
+  three_d_landing_page,
   email_icon,
   person_icon,
   facebook_icon,
