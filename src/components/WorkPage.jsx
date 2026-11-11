@@ -7,30 +7,35 @@ const categories = ['All projects', 'Web & SaaS', 'AI & automation', 'Digital gr
 const projects = [
   {
     title: 'Venuefy',
+    displayTitle: 'Venuefy Event Platform',
     category: 'Web & SaaS',
     image: assets.venuefy_landing_page,
     surface: 'bg-[#1d4778]',
   },
   {
     title: 'Slour',
+    displayTitle: 'Slour Scheduler',
     category: 'AI & automation',
     image: assets.slour_landing_page,
     surface: 'bg-[#ff2938]',
   },
   {
     title: 'Amazonis',
+    displayTitle: 'Amazonis Digital Experience',
     category: 'Web & SaaS',
     image: assets.amazonis_landing_page,
     surface: 'bg-[#0849c8]',
   },
   {
     title: '3D Wisdom',
+    displayTitle: '3D Wisdom Visualization',
     category: 'Web & SaaS',
     image: assets.three_d_landing_page,
     surface: 'bg-[#675b4d]',
   },
   {
     title: 'Magpie Corporation',
+    displayTitle: 'Magpie Corporation',
     category: 'Digital growth',
     image: assets.client_magpie_corp,
     surface: 'bg-white',
@@ -152,36 +157,44 @@ const WorkPage = () => {
                 transition={{ duration: 0.65, delay: Math.min(index * 0.05, 0.3), ease: [0.22, 1, 0.36, 1] }}
                 className='space-y-3'
               >
-                <div className='grid gap-3 lg:grid-cols-3'>
-                  <div className={`group relative aspect-[16/10] overflow-hidden rounded-[1.4rem] lg:col-span-2 ${project.surface}`}>
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      loading={index > 1 ? 'lazy' : 'eager'}
-                      decoding='async'
-                      className={`h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.035] ${
-                        project.contain ? 'object-contain p-10 sm:p-16' : 'object-cover'
-                      }`}
-                    />
-                    <div className='absolute inset-x-0 bottom-0 flex items-end justify-between gap-5 bg-gradient-to-t from-black/70 to-transparent p-5 pt-16 text-white sm:p-7 sm:pt-20'>
-                      <h2 className='text-2xl font-extrabold sm:text-4xl'>{project.title}</h2>
-                      <span className='hidden text-[10px] font-bold uppercase tracking-[0.16em] sm:block'>{project.category}</span>
+                <div className='grid gap-x-3 gap-y-8 lg:grid-cols-3'>
+                  <div className='space-y-4 lg:col-span-2'>
+                    <div className={`group relative aspect-[16/10] overflow-hidden rounded-[1.4rem] ${project.surface}`}>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        loading={index > 1 ? 'lazy' : 'eager'}
+                        decoding='async'
+                        className={`h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.035] ${
+                          project.contain ? 'object-contain p-10 sm:p-16' : 'object-cover'
+                        }`}
+                      />
+                    </div>
+                    <div className='flex items-start justify-between gap-5 px-1'>
+                      <h2 className='text-lg font-extrabold sm:text-2xl'>{project.displayTitle}</h2>
+                      <p className='shrink-0 pt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-gray-500 dark:text-gray-400'>
+                        {project.category}
+                      </p>
                     </div>
                   </div>
 
-                  <div className={`group relative aspect-[4/5] overflow-hidden rounded-[1.4rem] ${project.surface}`}>
-                    <img
-                      src={project.image}
-                      alt={`${project.title} mobile presentation`}
-                      loading='lazy'
-                      decoding='async'
-                      className={`h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.04] ${
-                        project.contain ? 'object-contain p-10' : 'object-cover object-center'
-                      }`}
-                    />
-                    <div className='absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5 pt-16 text-white sm:p-7'>
-                      <p className='text-lg font-extrabold sm:text-2xl'>{project.title}</p>
-                      <p className='mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/75'>Mobile version</p>
+                  <div className='space-y-4'>
+                    <div className={`group relative aspect-[4/5] overflow-hidden rounded-[1.4rem] ${project.surface}`}>
+                      <img
+                        src={project.image}
+                        alt={`${project.title} mobile presentation`}
+                        loading='lazy'
+                        decoding='async'
+                        className={`h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.04] ${
+                          project.contain ? 'object-contain p-10' : 'object-cover object-center'
+                        }`}
+                      />
+                    </div>
+                    <div className='flex items-start justify-between gap-5 px-1'>
+                      <h3 className='text-lg font-extrabold sm:text-2xl'>{project.title} Mobile Version</h3>
+                      <p className='shrink-0 pt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-gray-500 dark:text-gray-400'>
+                        Mobile apps
+                      </p>
                     </div>
                   </div>
                 </div>
