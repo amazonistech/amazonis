@@ -10,6 +10,8 @@ const projects = [
     displayTitle: 'Venuefy Event Platform',
     category: 'Web & SaaS',
     image: assets.venuefy_landing_page,
+    logo: assets.venuefy_logo,
+    website: 'https://venuefy.in/',
     surface: 'bg-[#1d4778]',
   },
   {
@@ -17,6 +19,8 @@ const projects = [
     displayTitle: 'Slour Scheduler',
     category: 'AI & automation',
     image: assets.slour_landing_page,
+    logo: assets.slour_logo,
+    website: 'https://slour.in/',
     surface: 'bg-[#ff2938]',
   },
   {
@@ -24,6 +28,8 @@ const projects = [
     displayTitle: 'Amazonis Digital Experience',
     category: 'Web & SaaS',
     image: assets.amazonis_landing_page,
+    logo: assets.logo,
+    website: 'https://amazonis.in/',
     surface: 'bg-[#0849c8]',
   },
   {
@@ -31,6 +37,8 @@ const projects = [
     displayTitle: '3D Wisdom Visualization',
     category: 'Web & SaaS',
     image: assets.three_d_landing_page,
+    logo: assets.client_3d,
+    website: 'https://3dwisdom.in/',
     surface: 'bg-[#675b4d]',
   },
   {
@@ -38,6 +46,8 @@ const projects = [
     displayTitle: 'Magpie Corporation',
     category: 'Digital growth',
     image: assets.client_magpie_corp,
+    logo: assets.client_magpie_corp,
+    website: 'https://magpiecorporation.com/',
     surface: 'bg-white',
     contain: true,
   },
@@ -169,6 +179,18 @@ const WorkPage = () => {
                           project.contain ? 'object-contain p-10 sm:p-16' : 'object-cover'
                         }`}
                       />
+                      <div className='absolute left-4 top-4 z-10 grid h-16 w-20 place-items-center rounded-2xl bg-white p-3 shadow-lg sm:left-6 sm:top-6 sm:h-20 sm:w-24 sm:p-4'>
+                        <img src={project.logo} alt={`${project.title} logo`} className='h-full w-full object-contain' />
+                      </div>
+                      <a
+                        href={project.website}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        aria-label={`Visit ${project.title} website`}
+                        className='absolute bottom-4 right-4 z-20 grid h-12 w-12 place-items-center rounded-full bg-white text-2xl font-bold text-primary shadow-xl transition duration-300 hover:scale-110 hover:bg-primary hover:text-white sm:bottom-6 sm:right-6 sm:h-14 sm:w-14'
+                      >
+                        ↗
+                      </a>
                     </div>
                     <div className='flex items-start justify-between gap-5 px-1'>
                       <h2 className='text-lg font-extrabold sm:text-2xl'>{project.displayTitle}</h2>
@@ -189,6 +211,18 @@ const WorkPage = () => {
                           project.contain ? 'object-contain p-10' : 'object-cover object-center'
                         }`}
                       />
+                      <div className='absolute left-4 top-4 z-10 grid h-16 w-20 place-items-center rounded-2xl bg-white p-3 shadow-lg sm:left-6 sm:top-6 sm:h-20 sm:w-24 sm:p-4'>
+                        <img src={project.logo} alt={`${project.title} logo`} className='h-full w-full object-contain' />
+                      </div>
+                      <a
+                        href={project.website}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        aria-label={`Visit ${project.title} website`}
+                        className='absolute bottom-4 right-4 z-20 grid h-12 w-12 place-items-center rounded-full bg-white text-2xl font-bold text-primary shadow-xl transition duration-300 hover:scale-110 hover:bg-primary hover:text-white sm:bottom-6 sm:right-6 sm:h-14 sm:w-14'
+                      >
+                        ↗
+                      </a>
                     </div>
                     <div className='flex items-start justify-between gap-5 px-1'>
                       <h3 className='text-lg font-extrabold sm:text-2xl'>{project.title} Mobile Version</h3>
