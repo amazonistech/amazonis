@@ -7,7 +7,6 @@ import hero_img from './hero_img.png'
 import client_3d from './client_3d.svg'
 import client_slour from './client_slour.svg'
 import client_venuefy from './client_venuefy.svg'
-import client_imperial_steel from './client_imperial_steel.svg'
 import client_magpie_auto from './client_magpie_auto.svg'
 import client_magpie_corp from './client_magpie_corp.svg'
 import ads_icon from './ads_icon.svg'
@@ -46,12 +45,11 @@ import venuefy_logo_hover from './venuefy_logo_hover.svg'
 
 
 export const company_logos = [
-  client_3d,
-  client_slour,
   client_venuefy,
-  client_imperial_steel,
+  client_slour,
   client_magpie_auto,
   client_magpie_corp,
+  client_3d,
 ]
 
 const assets = {

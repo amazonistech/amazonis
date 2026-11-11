@@ -22,7 +22,7 @@ const TrustedBy = () => {
         whileInView="visible"
         transition={{ staggerChildren: 0.1 }}
         viewport={{ once: true }}
-      className='grid w-full max-w-5xl grid-cols-2 items-center gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-6'>
+      className='grid w-full max-w-4xl grid-cols-2 items-center gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-5'>
         {company_logos.map((logo, index)=>(
             <Motion.img 
             variants={{
