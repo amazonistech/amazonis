@@ -21,7 +21,7 @@ const projects = [
     image: assets.work_mobile_app,
     logo: assets.slour_logo,
     layout: 'lg:col-span-4',
-    ratio: 'aspect-[4/5] lg:aspect-auto lg:h-full',
+    ratio: 'aspect-[4/5]',
     surface: 'from-[#e8efff] via-[#cfdcff] to-[#98b5ff]',
     position: 'object-center',
   },
