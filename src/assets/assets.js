@@ -60,6 +60,7 @@ const assets = {
   bgImage1,
   bgImage2,
   hero_img,
+  client_magpie_corp,
   ads_icon,
   content_icon,
   marketing_icon,

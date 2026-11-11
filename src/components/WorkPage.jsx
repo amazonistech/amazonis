@@ -2,99 +2,39 @@ import React, { useMemo, useState } from 'react'
 import { AnimatePresence, motion as Motion } from 'motion/react'
 import assets from '../assets/assets'
 
-const categories = ['All projects', 'Web & SaaS', 'Mobile apps', 'AI & automation', 'Digital growth']
+const categories = ['All projects', 'Web & SaaS', 'AI & automation', 'Digital growth']
 
 const projects = [
   {
-    title: 'Venuefy Event Platform',
+    title: 'Venuefy',
     category: 'Web & SaaS',
     image: assets.venuefy_landing_page,
-    layout: 'lg:col-span-8',
-    ratio: 'aspect-[16/10]',
-    surface: 'from-[#fff3e9] via-white to-[#dbe8ff]',
-    position: 'object-center',
+    surface: 'bg-[#1d4778]',
   },
   {
-    title: 'Slour Scheduler',
-    category: 'Web & SaaS',
+    title: 'Slour',
+    category: 'AI & automation',
     image: assets.slour_landing_page,
-    layout: 'lg:col-span-4',
-    ratio: 'aspect-[4/5]',
-    surface: 'from-[#fff3f3] via-white to-[#ffd5d5]',
-    position: 'object-center',
+    surface: 'bg-[#ff2938]',
   },
   {
-    title: '3D Wisdom Visualization',
-    category: 'Web & SaaS',
-    image: assets.three_d_landing_page,
-    layout: 'lg:col-span-4',
-    ratio: 'aspect-[4/5]',
-    surface: 'from-[#e8e4df] via-white to-[#c9c0b8]',
-    position: 'object-center',
-  },
-  {
-    title: 'Amazonis Digital Experience',
+    title: 'Amazonis',
     category: 'Web & SaaS',
     image: assets.amazonis_landing_page,
-    layout: 'lg:col-span-8',
-    ratio: 'aspect-[2/1]',
-    surface: 'from-[#e5edff] via-white to-[#b7ccff]',
-    position: 'object-center',
+    surface: 'bg-[#0849c8]',
   },
   {
-    title: 'Inphra Operations Suite',
+    title: '3D Wisdom',
     category: 'Web & SaaS',
-    image: assets.work_dashboard_management,
-    logo: assets.inphra_logo,
-    layout: 'lg:col-span-4',
-    ratio: 'aspect-[4/5]',
-    surface: 'from-[#e8efff] via-[#cfdcff] to-[#98b5ff]',
-    position: 'object-center',
+    image: assets.three_d_landing_page,
+    surface: 'bg-[#675b4d]',
   },
   {
-    title: 'Fitness Companion',
-    category: 'Mobile apps',
-    image: assets.work_fitness_app,
-    layout: 'lg:col-span-4',
-    ratio: 'aspect-[4/5]',
-    surface: 'from-[#e7efff] via-[#f9fbff] to-[#b7cbff]',
-    position: 'object-center',
-  },
-  {
-    title: 'AI Workflow Systems',
-    category: 'AI & automation',
-    image: assets.hero_img,
-    layout: 'lg:col-span-4',
-    ratio: 'aspect-[4/5]',
-    surface: 'from-[#dfe8ff] via-[#f5f8ff] to-[#b6c9ff]',
-    position: 'object-center',
-  },
-  {
-    title: 'Customer Growth Engine',
+    title: 'Magpie Corporation',
     category: 'Digital growth',
-    image: assets.hero_img,
-    layout: 'lg:col-span-4',
-    ratio: 'aspect-square',
-    surface: 'from-[#eef3ff] via-white to-[#c9d8ff]',
-    position: 'object-right',
-  },
-  {
-    title: 'Mobile Service Portal',
-    category: 'Mobile apps',
-    image: assets.work_mobile_app,
-    layout: 'lg:col-span-4',
-    ratio: 'aspect-square',
-    surface: 'from-[#dce7ff] via-[#f6f9ff] to-[#a7c0ff]',
-    position: 'object-center',
-  },
-  {
-    title: 'Performance Intelligence',
-    category: 'AI & automation',
-    image: assets.work_dashboard_management,
-    layout: 'lg:col-span-4',
-    ratio: 'aspect-square',
-    surface: 'from-[#edf2ff] via-white to-[#c5d5ff]',
-    position: 'object-center',
+    image: assets.client_magpie_corp,
+    surface: 'bg-white',
+    contain: true,
   },
 ]
 
@@ -199,7 +139,7 @@ const WorkPage = () => {
       </section>
 
       <section className='px-4 pb-12 sm:px-12 lg:px-24 xl:px-40'>
-        <Motion.div layout className='mx-auto grid max-w-7xl grid-cols-1 gap-x-3 gap-y-7 sm:grid-cols-2 sm:gap-y-9 lg:grid-cols-12'>
+        <Motion.div layout className='mx-auto max-w-7xl space-y-14 sm:space-y-20'>
           <AnimatePresence mode='popLayout'>
             {visibleProjects.map((project, index) => (
               <Motion.article
@@ -210,45 +150,59 @@ const WorkPage = () => {
                 exit={{ opacity: 0, scale: 0.96 }}
                 viewport={{ once: true, amount: 0.16 }}
                 transition={{ duration: 0.65, delay: Math.min(index * 0.05, 0.3), ease: [0.22, 1, 0.36, 1] }}
-                className={`group sm:col-span-1 ${project.layout}`}
+                className='space-y-3'
               >
-                <div className={`relative overflow-hidden rounded-[1.4rem] bg-gradient-to-br ${project.surface} ${project.ratio}`}>
-                  <Motion.div
-                    initial={{ opacity: 0.2, scale: 1.08, filter: 'blur(8px)' }}
-                    whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-                    viewport={{ once: true, amount: 0.35 }}
-                    transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                    className='h-full w-full'
-                  >
+                <div className='grid gap-3 lg:grid-cols-3'>
+                  <div className={`group relative aspect-[16/10] overflow-hidden rounded-[1.4rem] lg:col-span-2 ${project.surface}`}>
                     <img
                       src={project.image}
                       alt={project.title}
                       loading={index > 1 ? 'lazy' : 'eager'}
                       decoding='async'
-                      width='640'
-                      height='434'
-                      className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.045] ${project.position}`}
+                      className={`h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.035] ${
+                        project.contain ? 'object-contain p-10 sm:p-16' : 'object-cover'
+                      }`}
                     />
-                  </Motion.div>
-
-                  <div className='pointer-events-none absolute inset-0 bg-gradient-to-t from-[#06102b]/45 via-transparent to-transparent opacity-25 transition-opacity duration-500 group-hover:opacity-45' />
-
-                  {project.logo && (
-                    <div className='absolute left-5 top-5 rounded-xl bg-white/90 px-4 py-3 shadow-sm backdrop-blur sm:left-7 sm:top-7'>
-                      <img src={project.logo} alt='' className='h-6 max-w-28 object-contain' />
+                    <div className='absolute inset-x-0 bottom-0 flex items-end justify-between gap-5 bg-gradient-to-t from-black/70 to-transparent p-5 pt-16 text-white sm:p-7 sm:pt-20'>
+                      <h2 className='text-2xl font-extrabold sm:text-4xl'>{project.title}</h2>
+                      <span className='hidden text-[10px] font-bold uppercase tracking-[0.16em] sm:block'>{project.category}</span>
                     </div>
-                  )}
+                  </div>
 
-                  <span className='absolute bottom-5 right-5 flex h-10 w-10 translate-y-2 items-center justify-center rounded-full bg-white text-xl text-primary opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100'>
-                    ↗
-                  </span>
+                  <div className={`group relative aspect-[4/5] overflow-hidden rounded-[1.4rem] ${project.surface}`}>
+                    <img
+                      src={project.image}
+                      alt={`${project.title} mobile presentation`}
+                      loading='lazy'
+                      decoding='async'
+                      className={`h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.04] ${
+                        project.contain ? 'object-contain p-10' : 'object-cover object-center'
+                      }`}
+                    />
+                    <div className='absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5 pt-16 text-white sm:p-7'>
+                      <p className='text-lg font-extrabold sm:text-2xl'>{project.title}</p>
+                      <p className='mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/75'>Mobile version</p>
+                    </div>
+                  </div>
                 </div>
 
-                <div className='flex items-start justify-between gap-4 px-1 pt-4'>
-                  <h2 className='text-base font-extrabold sm:text-lg'>{project.title}</h2>
-                  <p className='shrink-0 pt-1 text-[10px] font-bold uppercase tracking-[0.14em] text-gray-500 dark:text-gray-400'>
-                    {project.category}
-                  </p>
+                <div className='grid gap-3 sm:grid-cols-3'>
+                  {['object-left', 'object-center', 'object-right'].map((position, tileIndex) => (
+                    <div
+                      key={`${project.title}-${position}`}
+                      className={`group relative aspect-[4/3] overflow-hidden rounded-[1.2rem] ${project.surface}`}
+                    >
+                      <img
+                        src={project.image}
+                        alt={`${project.title} detail ${tileIndex + 1}`}
+                        loading='lazy'
+                        decoding='async'
+                        className={`h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.05] ${
+                          project.contain ? 'object-contain p-8' : `object-cover ${position}`
+                        }`}
+                      />
+                    </div>
+                  ))}
                 </div>
               </Motion.article>
             ))}
