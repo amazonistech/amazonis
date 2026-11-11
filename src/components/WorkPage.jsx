@@ -6,20 +6,20 @@ const categories = ['All projects', 'Web & SaaS', 'Mobile apps', 'AI & automatio
 
 const projects = [
   {
-    title: 'Inphra Operations Suite',
-    category: 'Web & SaaS',
-    image: assets.work_dashboard_management,
-    logo: assets.inphra_logo,
+    title: 'Slour Mobile Experience',
+    category: 'Mobile apps',
+    image: assets.slour_landing_page,
+    logo: assets.slour_logo,
     layout: 'lg:col-span-8',
     ratio: 'aspect-[16/10]',
     surface: 'from-[#dbe8ff] via-white to-[#a9c7ff]',
     position: 'object-center',
   },
   {
-    title: 'Slour Mobile Experience',
-    category: 'Mobile apps',
-    image: assets.slour_landing_page,
-    logo: assets.slour_logo,
+    title: 'Inphra Operations Suite',
+    category: 'Web & SaaS',
+    image: assets.work_dashboard_management,
+    logo: assets.inphra_logo,
     layout: 'lg:col-span-4',
     ratio: 'aspect-[4/5]',
     surface: 'from-[#e8efff] via-[#cfdcff] to-[#98b5ff]',
