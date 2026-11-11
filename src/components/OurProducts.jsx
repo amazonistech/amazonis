@@ -34,12 +34,16 @@ const ProductCard = ({ product, index }) => {
 
       <div className='relative z-10 flex h-full flex-1 flex-col'>
         <div
-          className='relative grid h-28 w-28 shrink-0 place-items-center overflow-hidden rounded-full border border-gray-200 bg-gray-100 transition-all duration-300 group-hover:border-[var(--product-color)] group-hover:bg-white dark:border-gray-700 dark:bg-gray-800'
+          className={`relative grid h-28 w-28 shrink-0 place-items-center overflow-hidden rounded-full border transition-all duration-300 group-hover:border-[var(--product-color)] ${
+            product.filledLogo
+              ? 'border-[#162c53] bg-[#162c53] group-hover:bg-[#162c53]'
+              : 'border-gray-200 bg-gray-100 group-hover:bg-white dark:border-gray-700 dark:bg-gray-800'
+          }`}
         >
           <img
             src={product.logo}
             alt={`${product.title} logo`}
-            className='h-full w-full object-contain p-3'
+            className={`h-full w-full ${product.filledLogo ? 'object-cover' : 'object-contain p-3'}`}
           />
         </div>
 
@@ -85,7 +89,8 @@ const OurProducts = () => {
       tagline: 'Venue booking made simple',
       description: 'Discover, manage and book event venues with confidence.',
       category: 'Venue Discovery & Booking',
-      logo: assets.venuefy_logo,
+      logo: assets.venuefy_logo_hover,
+      filledLogo: true,
       hoverColor: '#162c53',
       glowColor: 'rgba(22, 44, 83, 0.14)',
       strongGlowColor: 'rgba(22, 44, 83, 0.24)',

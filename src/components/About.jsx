@@ -58,7 +58,8 @@ const values = [
 const products = [
   {
     name: 'Venuefy',
-    mark: assets.venuefy_logo,
+    mark: assets.venuefy_logo_hover,
+    filledMark: true,
     text: 'A venue discovery and booking platform for wedding venues, banquet halls and event spaces.',
     href: 'https://venuefy.in/',
   },
@@ -174,11 +175,15 @@ const About = () => {
                     : 'hover:-translate-y-1 hover:border-primary'
                 }`}
               >
-                <span className='relative grid h-20 w-20 place-items-center overflow-hidden rounded-full bg-white p-2.5 dark:bg-black'>
+                <span
+                  className={`relative grid h-20 w-20 place-items-center overflow-hidden rounded-full ${
+                    product.filledMark ? 'bg-[#162c53] p-0' : 'bg-white p-2.5 dark:bg-black'
+                  }`}
+                >
                   <img
                     src={product.mark}
                     alt={`${product.name} logo`}
-                    className='h-full w-full object-contain'
+                    className={`h-full w-full ${product.filledMark ? 'object-cover' : 'object-contain'}`}
                   />
                 </span>
                 <h3 className='mt-8 text-3xl font-extrabold'>{product.name}</h3>
