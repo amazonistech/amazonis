@@ -18,7 +18,7 @@ const projects = [
   {
     title: 'Slour Mobile Experience',
     category: 'Mobile apps',
-    image: assets.work_mobile_app,
+    image: assets.slour_landing_page,
     logo: assets.slour_logo,
     layout: 'lg:col-span-4',
     ratio: 'aspect-[4/5]',
@@ -28,7 +28,7 @@ const projects = [
   {
     title: 'Venuefy Event Platform',
     category: 'Web & SaaS',
-    image: assets.bgImage1,
+    image: assets.venuefy_landing_page,
     logo: assets.venuefy_logo,
     layout: 'lg:col-span-4',
     ratio: 'aspect-[4/5]',
@@ -54,9 +54,9 @@ const projects = [
     position: 'object-center',
   },
   {
-    title: 'Commerce Command Center',
+    title: 'Amazonis Digital Experience',
     category: 'Web & SaaS',
-    image: assets.bgImage2,
+    image: assets.amazonis_landing_page,
     layout: 'lg:col-span-8',
     ratio: 'aspect-[2/1]',
     surface: 'from-[#e5edff] via-white to-[#b7ccff]',
