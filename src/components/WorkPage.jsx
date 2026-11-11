@@ -58,7 +58,7 @@ const projects = [
     category: 'Web & SaaS',
     image: assets.bgImage2,
     layout: 'lg:col-span-8',
-    ratio: 'aspect-[16/9]',
+    ratio: 'aspect-[2/1]',
     surface: 'from-[#e5edff] via-white to-[#b7ccff]',
     position: 'object-center',
   },
