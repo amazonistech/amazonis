@@ -179,7 +179,7 @@ const WorkPage = () => {
                           project.contain ? 'object-contain p-10 sm:p-16' : 'object-cover'
                         }`}
                       />
-                      <div className='absolute left-4 top-4 z-10 grid h-16 w-20 place-items-center rounded-2xl bg-white p-3 shadow-lg sm:left-6 sm:top-6 sm:h-20 sm:w-24 sm:p-4'>
+                      <div className='absolute left-4 top-4 z-10 grid h-8 w-10 place-items-center rounded-lg bg-white p-1.5 shadow-lg sm:left-6 sm:top-6 sm:h-10 sm:w-12 sm:p-2'>
                         <img src={project.logo} alt={`${project.title} logo`} className='h-full w-full object-contain' />
                       </div>
                       <a
@@ -187,7 +187,7 @@ const WorkPage = () => {
                         target='_blank'
                         rel='noopener noreferrer'
                         aria-label={`Visit ${project.title} website`}
-                        className='absolute bottom-4 right-4 z-20 grid h-12 w-12 place-items-center rounded-full bg-white text-2xl font-bold text-primary shadow-xl transition duration-300 hover:scale-110 hover:bg-primary hover:text-white sm:bottom-6 sm:right-6 sm:h-14 sm:w-14'
+                        className='absolute bottom-4 right-4 z-20 grid h-6 w-6 place-items-center rounded-full bg-white text-sm font-bold text-primary shadow-xl transition duration-300 hover:scale-110 hover:bg-primary hover:text-white sm:bottom-6 sm:right-6 sm:h-7 sm:w-7 sm:text-base'
                       >
                         ↗
                       </a>
@@ -211,7 +211,7 @@ const WorkPage = () => {
                           project.contain ? 'object-contain p-10' : 'object-cover object-center'
                         }`}
                       />
-                      <div className='absolute left-4 top-4 z-10 grid h-16 w-20 place-items-center rounded-2xl bg-white p-3 shadow-lg sm:left-6 sm:top-6 sm:h-20 sm:w-24 sm:p-4'>
+                      <div className='absolute left-4 top-4 z-10 grid h-8 w-10 place-items-center rounded-lg bg-white p-1.5 shadow-lg sm:left-6 sm:top-6 sm:h-10 sm:w-12 sm:p-2'>
                         <img src={project.logo} alt={`${project.title} logo`} className='h-full w-full object-contain' />
                       </div>
                       <a
@@ -219,7 +219,7 @@ const WorkPage = () => {
                         target='_blank'
                         rel='noopener noreferrer'
                         aria-label={`Visit ${project.title} website`}
-                        className='absolute bottom-4 right-4 z-20 grid h-12 w-12 place-items-center rounded-full bg-white text-2xl font-bold text-primary shadow-xl transition duration-300 hover:scale-110 hover:bg-primary hover:text-white sm:bottom-6 sm:right-6 sm:h-14 sm:w-14'
+                        className='absolute bottom-4 right-4 z-20 grid h-6 w-6 place-items-center rounded-full bg-white text-sm font-bold text-primary shadow-xl transition duration-300 hover:scale-110 hover:bg-primary hover:text-white sm:bottom-6 sm:right-6 sm:h-7 sm:w-7 sm:text-base'
                       >
                         ↗
                       </a>
