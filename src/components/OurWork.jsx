@@ -7,20 +7,14 @@ const OurWork = () => {
   const workData = [
     {
       title: 'Dashboard Management',
-      category: 'Operations Platform',
-      description: 'A clean business dashboard for tracking performance, workflows and daily decisions.',
       image: assets.work_dashboard_management,
     },
     {
       title: 'Fitness App',
-      category: 'Mobile Experience',
-      description: 'A modern fitness product experience with simple progress tracking and guided flows.',
       image: assets.work_fitness_app,
     },
     {
       title: 'Mobile App',
-      category: 'Product Design',
-      description: 'A polished mobile interface built for fast navigation and clear user action.',
       image: assets.work_mobile_app,
     },
   ]
@@ -58,17 +52,6 @@ const OurWork = () => {
               />
             </div>
 
-            <div className='p-6'>
-              <p className='text-xs font-bold uppercase tracking-[0.18em] text-primary'>
-                {work.category}
-              </p>
-              <h3 className='mt-3 text-2xl font-extrabold text-gray-900 dark:text-white'>
-                {work.title}
-              </h3>
-              <p className='mt-3 text-sm leading-7 text-gray-600 dark:text-gray-400'>
-                {work.description}
-              </p>
-            </div>
           </Motion.article>
         ))}
       </div>

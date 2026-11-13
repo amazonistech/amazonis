@@ -4,98 +4,78 @@ import { motion as Motion } from 'motion/react'
 const serviceIcons = {
     website: (
         <>
-            <rect x="10" y="14" width="44" height="34" rx="5" />
-            <path d="M10 23H54" />
-            <path d="M25 34L20 38L25 42" />
-            <path d="M39 34L44 38L39 42" />
-            <path d="M34 32L30 44" />
+            <rect x="3" y="4" width="18" height="16" rx="2.5" />
+            <path d="M3 8.5H21" />
+            <path d="M8.5 12.5L6 15L8.5 17.5" />
+            <path d="M15.5 12.5L18 15L15.5 17.5" />
+            <path d="M13.5 11.5L10.5 18.5" />
         </>
     ),
     ecommerce: (
         <>
-            <path d="M18 20H22L26 40H45L50 26H25" />
-            <circle cx="29" cy="47" r="3" />
-            <circle cx="43" cy="47" r="3" />
-            <path d="M34 20V14" />
-            <path d="M29 19L34 14L39 19" />
+            <path d="M4 8H20L18.5 20H5.5L4 8Z" />
+            <path d="M8 10V6A4 4 0 0 1 16 6V10" />
+            <path d="M9 13H9.01" />
+            <path d="M15 13H15.01" />
         </>
     ),
     mobile: (
         <>
-            <rect x="22" y="9" width="20" height="46" rx="5" />
-            <path d="M29 15H35" />
-            <path d="M30 49H34" />
-            <path d="M27 23H37" />
-            <path d="M27 30H37" />
-            <path d="M27 37H33" />
+            <rect x="6.5" y="2" width="11" height="20" rx="2.5" />
+            <path d="M10 5H14" />
+            <path d="M11 19H13" />
         </>
     ),
     ai: (
         <>
-            <path d="M32 13V9" />
-            <path d="M32 55V51" />
-            <path d="M13 32H9" />
-            <path d="M55 32H51" />
-            <rect x="20" y="20" width="24" height="24" rx="6" />
-            <circle cx="28" cy="30" r="2" />
-            <circle cx="36" cy="30" r="2" />
-            <path d="M27 37C30 40 34 40 37 37" />
-            <path d="M18 18L15 15" />
-            <path d="M46 18L49 15" />
-            <path d="M18 46L15 49" />
-            <path d="M46 46L49 49" />
+            <rect x="6" y="6" width="12" height="12" rx="3" />
+            <path d="M9 2V6M15 2V6M9 18V22M15 18V22" />
+            <path d="M2 9H6M2 15H6M18 9H22M18 15H22" />
+            <path d="M12 9V15M9 12H15" />
         </>
     ),
     marketing: (
         <>
-            <path d="M15 37H22L42 47V17L22 27H15V37Z" />
-            <path d="M22 37L26 49" />
-            <path d="M47 27C49 29 49 35 47 37" />
-            <path d="M52 22C56 27 56 37 52 42" />
+            <path d="M3 11V15A2 2 0 0 0 5 17H8L17 21V5L8 9H5A2 2 0 0 0 3 11Z" />
+            <path d="M8 17L10 22" />
+            <path d="M20 9.5C21.4 10.8 21.4 15.2 20 16.5" />
         </>
     ),
     social: (
         <>
-            <rect x="13" y="15" width="38" height="34" rx="6" />
-            <path d="M13 25H51" />
-            <path d="M23 11V19" />
-            <path d="M41 11V19" />
-            <circle cx="25" cy="36" r="3" />
-            <circle cx="39" cy="36" r="3" />
-            <path d="M28 36H36" />
+            <circle cx="6" cy="12" r="2.5" />
+            <circle cx="18" cy="6" r="2.5" />
+            <circle cx="18" cy="18" r="2.5" />
+            <path d="M8.2 10.9L15.8 7.1M8.2 13.1L15.8 16.9" />
         </>
     ),
     influencer: (
         <>
-            <circle cx="25" cy="25" r="7" />
-            <path d="M13 49C15 40 20 36 25 36C30 36 35 40 37 49" />
-            <circle cx="42" cy="29" r="5" />
-            <path d="M38 40C43 40 47 43 50 49" />
-            <path d="M42 14L44 18L49 19L45 22L46 27L42 24L38 27L39 22L35 19L40 18L42 14Z" />
+            <circle cx="9" cy="8" r="3" />
+            <path d="M3.5 20C4 15.8 6 14 9 14C12 14 14 15.8 14.5 20" />
+            <circle cx="17.5" cy="9" r="2.5" />
+            <path d="M16 14.5C18.8 14.3 20.5 16 21 19" />
         </>
     ),
     hosting: (
         <>
-            <rect x="15" y="14" width="34" height="12" rx="3" />
-            <rect x="15" y="32" width="34" height="12" rx="3" />
-            <path d="M22 20H23" />
-            <path d="M22 38H23" />
-            <path d="M31 26V32" />
-            <path d="M32 50V44" />
-            <path d="M22 50H42" />
+            <rect x="3" y="4" width="18" height="6" rx="2" />
+            <rect x="3" y="14" width="18" height="6" rx="2" />
+            <path d="M7 7H7.01M7 17H7.01M17 7H18M17 17H18" />
+            <path d="M12 10V14" />
         </>
     ),
 }
 
 const ServiceIcon = ({ name, title }) => (
     <svg
-        viewBox="0 0 64 64"
+        viewBox="0 0 24 24"
         role="img"
         aria-label={`${title} icon`}
-        className="h-14 w-14 text-primary"
+        className="h-9 w-9 text-primary"
         fill="none"
         stroke="currentColor"
-        strokeWidth="3"
+        strokeWidth="1.65"
         strokeLinecap="round"
         strokeLinejoin="round"
     >
@@ -141,7 +121,7 @@ const ServiceCard = ({ service, index }) => {
             />
 
             <div className="flex items-center gap-10 p-8 hover:p-7.5 hover:m-0.5 transition-all rounded-[10px] bg-white dark:bg-gray-900 z-10 relative">
-                <div className="grid h-24 w-24 shrink-0 place-items-center rounded-full bg-primary/10 ring-1 ring-primary/15 dark:bg-primary/15">
+                <div className="grid h-20 w-20 shrink-0 place-items-center rounded-[18px] bg-primary/6 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] ring-1 ring-primary/12 dark:bg-primary/12 dark:shadow-none dark:ring-primary/20">
                     <ServiceIcon name={service.iconName} title={service.title} />
                 </div>
 
