@@ -24,15 +24,6 @@ const projects = [
     surface: 'bg-[#ff2938]',
   },
   {
-    title: 'Amazonis',
-    displayTitle: 'Amazonis Digital Experience',
-    category: 'Web & SaaS',
-    image: assets.amazonis_landing_page,
-    logo: assets.logo,
-    website: 'https://amazonis.in/',
-    surface: 'bg-[#0849c8]',
-  },
-  {
     title: '3D Wisdom',
     displayTitle: '3D Wisdom Visualization',
     category: 'Web & SaaS',
